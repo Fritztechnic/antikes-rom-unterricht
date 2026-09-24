@@ -13,6 +13,7 @@ const activateTab = (tab, { focus = false } = {}) => {
     const active = panel.id === tab.getAttribute('aria-controls');
     panel.hidden = !active;
     panel.classList.toggle('is-active', active);
+    panel.tabIndex = active ? 0 : -1;
   });
 
   tab.classList.add('is-active');
@@ -26,11 +27,17 @@ document.querySelectorAll('.tab').forEach((tab) => {
   tab.addEventListener('keydown', (event) => {
     const tabs = Array.from(tab.closest('.panel').querySelectorAll('.tab'));
     const currentIndex = tabs.indexOf(tab);
+    const tablist = tab.closest('[role="tablist"]');
+    const orientation = tablist?.getAttribute('aria-orientation') || 'horizontal';
     let targetTab = null;
 
-    if (event.key === 'ArrowRight') {
+    if (orientation === 'horizontal' && event.key === 'ArrowRight') {
       targetTab = tabs[(currentIndex + 1) % tabs.length];
-    } else if (event.key === 'ArrowLeft') {
+    } else if (orientation === 'horizontal' && event.key === 'ArrowLeft') {
+      targetTab = tabs[(currentIndex - 1 + tabs.length) % tabs.length];
+    } else if (orientation === 'vertical' && event.key === 'ArrowDown') {
+      targetTab = tabs[(currentIndex + 1) % tabs.length];
+    } else if (orientation === 'vertical' && event.key === 'ArrowUp') {
       targetTab = tabs[(currentIndex - 1 + tabs.length) % tabs.length];
     } else if (event.key === 'Home') {
       targetTab = tabs[0];

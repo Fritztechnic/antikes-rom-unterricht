@@ -181,7 +181,7 @@
           <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-4" id="tab-4" tabindex="-1">Person 4</button>
         </div>
         <div class="tab-panels">
-          <section class="card tab-panel is-active" id="rolle-1" role="tabpanel" aria-labelledby="tab-1">
+          <section class="card tab-panel is-active" id="rolle-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
             <h3>Person 1 – Einstieg und Lage</h3>
             <ul>
               <li>Impulsfrage stellen und Vorwissen sammeln.</li>
@@ -189,7 +189,7 @@
               <li>Tiber, Hügel und Ostia erklären.</li>
             </ul>
           </section>
-          <section class="card tab-panel" id="rolle-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+          <section class="card tab-panel" id="rolle-2" role="tabpanel" aria-labelledby="tab-2" tabindex="-1" hidden>
             <h3>Person 2 – Stadtstruktur und Infrastruktur</h3>
             <ul>
               <li>Forum, Straßen, Aquädukte und Thermen vorstellen.</li>
@@ -197,7 +197,7 @@
               <li>Gruppe 1 und 2 begleiten.</li>
             </ul>
           </section>
-          <section class="card tab-panel" id="rolle-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+          <section class="card tab-panel" id="rolle-3" role="tabpanel" aria-labelledby="tab-3" tabindex="-1" hidden>
             <h3>Person 3 – Spiel und Alltagsprobleme</h3>
             <ul>
               <li>Wohnen, Verkehr und Brandgefahr thematisieren.</li>
@@ -205,7 +205,7 @@
               <li>Gruppe 3 unterstützen.</li>
             </ul>
           </section>
-          <section class="card tab-panel" id="rolle-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+          <section class="card tab-panel" id="rolle-4" role="tabpanel" aria-labelledby="tab-4" tabindex="-1" hidden>
             <h3>Person 4 – Sicherung und Bewertung</h3>
             <ul>
               <li>Vor- und Nachteile sammeln und gewichten.</li>
@@ -244,7 +244,7 @@
           <p class="eyebrow">Schnelle Aktivierung</p>
           <h2>Quiz: Welche Lösung passt zu welchem Stadtproblem?</h2>
         </div>
-        <form class="quiz stack-md" data-quiz>
+        <form class="quiz stack-md" data-quiz aria-describedby="quiz-feedback">
           <fieldset class="card">
             <legend>1. Warum war der Tiber für Rom wichtig?</legend>
             <label><input type="radio" name="q1" value="wrong"> Weil er Rom direkt mit Griechenland verband</label>
@@ -265,7 +265,7 @@
           </fieldset>
           <div class="quiz__actions">
             <button class="button" type="submit" data-quiz-submit>Auswerten</button>
-            <p class="quiz__result" data-quiz-result aria-live="polite" role="status"></p>
+            <p class="quiz__result" id="quiz-feedback" data-quiz-result aria-live="polite" role="status"></p>
           </div>
         </form>
       </section>
