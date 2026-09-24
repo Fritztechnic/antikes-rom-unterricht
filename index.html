@@ -174,7 +174,7 @@
           <p class="eyebrow">Präsentation im Team</p>
           <h2>Sprechrollen für vier Vortragende</h2>
         </div>
-        <div class="presenter-tabs" role="tablist" aria-label="Rollen der Vortragenden">
+        <div class="presenter-tabs" role="tablist" aria-label="Rollen der Vortragenden" aria-orientation="horizontal">
           <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="rolle-1" id="tab-1">Person 1</button>
           <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-2" id="tab-2">Person 2</button>
           <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-3" id="tab-3">Person 3</button>
@@ -265,7 +265,7 @@
           </fieldset>
           <div class="quiz__actions">
             <button class="button" type="button" data-quiz-submit>Auswerten</button>
-            <p class="quiz__result" data-quiz-result aria-live="polite"></p>
+            <p class="quiz__result" data-quiz-result aria-live="polite" role="status"></p>
           </div>
         </form>
       </section>

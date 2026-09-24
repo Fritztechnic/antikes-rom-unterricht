@@ -84,6 +84,12 @@ a:hover { color: var(--primary); }
   color: #fffaf4;
   border: 2px solid rgba(255,255,255,0.75);
 }
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  background: #edbc5f;
+  color: #261e12;
+  border-color: #edbc5f;
+}
 .facts {
   display: grid;
   gap: 0.75rem;
