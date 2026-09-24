@@ -42,7 +42,7 @@ python3 -m http.server 8000
 Dann im Browser öffnen:
 
 - lokal: `http://localhost:8000/`
-- nach GitHub-Pages-Deployment: `https://fritztechnic.github.io/antikes-rom-unterricht/`
+- nach GitHub-Pages-Deployment typischerweise: `https://<owner>.github.io/<repo>/`
 
 ## GitHub Pages
 
@@ -51,9 +51,9 @@ Das Repo enthält einen Workflow für GitHub Pages, der bei einem Push auf `main
 1. In GitHub unter **Settings → Pages** als Quelle **GitHub Actions** auswählen, falls noch nicht aktiv.
 2. Änderungen nach `main` mergen.
 3. Den Workflow **Deploy static site to Pages** abwarten.
-4. Danach sollte die Seite unter `https://fritztechnic.github.io/antikes-rom-unterricht/` erreichbar sein.
+4. Danach sollte die Seite typischerweise unter `https://<owner>.github.io/<repo>/` erreichbar sein.
 
-Hinweis: In dieser Arbeitsumgebung konnte ich Repository-Einstellungen oder einen Live-Merge nach `main` nicht selbst abschließen; deshalb wird die URL hier nicht als bereits live behauptet.
+Hinweis: In dieser Arbeitsumgebung konnte ich Repository-Einstellungen oder einen Live-Merge nach `main` nicht selbst abschließen; deshalb wird hier keine konkrete Live-URL als bereits aktiv behauptet.
 
 ## Quellen und Attribution
 
@@ -64,7 +64,7 @@ Hinweis: In dieser Arbeitsumgebung konnte ich Repository-Einstellungen oder eine
 ## Barrierefreiheit und Nutzung
 
 - semantische HTML-Struktur
-- Tastaturbedienung für Tabs und Quiz
+- Tastaturbedienung für die Rollen-Tabs und native Formularbedienung für das Quiz
 - kontrastreiche Gestaltung
 - Druckansichten für Arbeitsblätter und Lehrkraft-Material
-- relative Pfade, damit das Projekt unter dem GitHub-Pages-Unterpfad `/antikes-rom-unterricht/` funktioniert
+- relative Pfade, damit das Projekt auch unter einem GitHub-Pages-Unterpfad zuverlässig funktioniert
