@@ -6,7 +6,7 @@ Interaktive deutschsprachige 45-Minuten-Unterrichtsstunde zur antiken Stadt Rom 
 
 - `index.html` – Hauptwebsite für den Unterricht
 - `materialien/` – vier differenzierte Arbeitsblätter plus Lehrkraft-Lösungen
-- `assets/illustrationen/` – lokal gespeicherte SVG-Karten und Diagramme
+- `praesentation/Antikes_Rom_Unterricht.pptx` – vollständig ausgearbeitete, editierbare Unterrichtspräsentation
 - `quellen.html` – Quellen, Lizenzen und historische Hinweise
 - `.github/workflows/deploy-pages.yml` – Deployment für GitHub Pages auf `main`
 
@@ -29,7 +29,7 @@ Interaktive deutschsprachige 45-Minuten-Unterrichtsstunde zur antiken Stadt Rom 
 - Arbeitsblatt 4: Bewertung, Transfer, Stadtplanung
 - Lehrkraft-Seite mit Lösungshinweisen und Timing
 
-Alle Kernmaterialien funktionieren lokal/offline. Externe Foto- und 3D-Ressourcen sind nur ergänzende Vertiefungen.
+Alle Kernmaterialien funktionieren lokal/offline. Die Website enthält bewusst keine eingebetteten Grafiken oder Karten, damit eigene Visuals ergänzt werden können.
 
 ## Lokale Vorschau
 
@@ -57,9 +57,7 @@ Hinweis: In dieser Arbeitsumgebung konnte ich Repository-Einstellungen oder eine
 
 ## Quellen und Attribution
 
-- Lokale SVG-Grafiken im Repo sind Eigenproduktionen und bewusst schematisch.
-- Externe Referenzen mit Lizenzhinweisen stehen in `quellen.html`.
-- Bei Wikimedia-Commons-Dateien immer die konkrete Dateiseite beachten, da Lizenzen dateispezifisch sind.
+- Historische Hintergrundquellen stehen in `quellen.html`.
 
 ## Barrierefreiheit und Nutzung
 
