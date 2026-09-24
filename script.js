@@ -1,22 +1,45 @@
+const activateTab = (tab) => {
+  const container = tab.closest('.panel');
+  const tabs = Array.from(container.querySelectorAll('.tab'));
+  const panels = container.querySelectorAll('.tab-panel');
+
+  tabs.forEach((item) => {
+    item.classList.remove('is-active');
+    item.setAttribute('aria-selected', item === tab ? 'true' : 'false');
+    item.tabIndex = item === tab ? 0 : -1;
+  });
+
+  panels.forEach((panel) => {
+    const active = panel.id === tab.getAttribute('aria-controls');
+    panel.hidden = !active;
+    panel.classList.toggle('is-active', active);
+  });
+
+  tab.classList.add('is-active');
+  tab.focus();
+};
+
 document.querySelectorAll('.tab').forEach((tab) => {
-  tab.addEventListener('click', () => {
-    const container = tab.closest('.panel');
-    const tabs = container.querySelectorAll('.tab');
-    const panels = container.querySelectorAll('.tab-panel');
+  tab.addEventListener('click', () => activateTab(tab));
+  tab.addEventListener('keydown', (event) => {
+    const tabs = Array.from(tab.closest('.panel').querySelectorAll('.tab'));
+    const currentIndex = tabs.indexOf(tab);
+    let targetTab = null;
 
-    tabs.forEach((item) => {
-      item.classList.remove('is-active');
-      item.setAttribute('aria-selected', item === tab ? 'true' : 'false');
-      item.tabIndex = item === tab ? 0 : -1;
-    });
+    if (event.key === 'ArrowRight') {
+      targetTab = tabs[(currentIndex + 1) % tabs.length];
+    } else if (event.key === 'ArrowLeft') {
+      targetTab = tabs[(currentIndex - 1 + tabs.length) % tabs.length];
+    } else if (event.key === 'Home') {
+      targetTab = tabs[0];
+    } else if (event.key === 'End') {
+      targetTab = tabs[tabs.length - 1];
+    }
 
-    panels.forEach((panel) => {
-      const active = panel.id === tab.getAttribute('aria-controls');
-      panel.hidden = !active;
-      panel.classList.toggle('is-active', active);
-    });
-
-    tab.classList.add('is-active');
+    if (targetTab) {
+      event.preventDefault();
+      activateTab(targetTab);
+    }
   });
 });
 
