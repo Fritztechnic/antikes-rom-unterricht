@@ -175,10 +175,10 @@
           <h2>Sprechrollen für vier Vortragende</h2>
         </div>
         <div class="presenter-tabs" role="tablist" aria-label="Rollen der Vortragenden" aria-orientation="horizontal">
-          <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="rolle-1" id="tab-1">Person 1</button>
-          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-2" id="tab-2">Person 2</button>
-          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-3" id="tab-3">Person 3</button>
-          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-4" id="tab-4">Person 4</button>
+          <button class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="rolle-1" id="tab-1" tabindex="0">Person 1</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-2" id="tab-2" tabindex="-1">Person 2</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-3" id="tab-3" tabindex="-1">Person 3</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="rolle-4" id="tab-4" tabindex="-1">Person 4</button>
         </div>
         <div class="tab-panels">
           <section class="card tab-panel is-active" id="rolle-1" role="tabpanel" aria-labelledby="tab-1">
@@ -264,7 +264,7 @@
             <label><input type="radio" name="q3" value="wrong"> Zu viele Wasserleitungen in jeder Wohnung</label>
           </fieldset>
           <div class="quiz__actions">
-            <button class="button" type="button" data-quiz-submit>Auswerten</button>
+            <button class="button" type="submit" data-quiz-submit>Auswerten</button>
             <p class="quiz__result" data-quiz-result aria-live="polite" role="status"></p>
           </div>
         </form>

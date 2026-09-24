@@ -1,4 +1,4 @@
-const activateTab = (tab) => {
+const activateTab = (tab, { focus = false } = {}) => {
   const container = tab.closest('.panel');
   const tabs = Array.from(container.querySelectorAll('.tab'));
   const panels = container.querySelectorAll('.tab-panel');
@@ -16,7 +16,9 @@ const activateTab = (tab) => {
   });
 
   tab.classList.add('is-active');
-  tab.focus();
+  if (focus) {
+    tab.focus();
+  }
 };
 
 document.querySelectorAll('.tab').forEach((tab) => {
@@ -38,7 +40,7 @@ document.querySelectorAll('.tab').forEach((tab) => {
 
     if (targetTab) {
       event.preventDefault();
-      activateTab(targetTab);
+      activateTab(targetTab, { focus: true });
     }
   });
 });
@@ -48,7 +50,7 @@ const quizButton = document.querySelector('[data-quiz-submit]');
 const quizResult = document.querySelector('[data-quiz-result]');
 
 if (quiz && quizButton && quizResult) {
-  quizButton.addEventListener('click', () => {
+  const evaluateQuiz = () => {
     const answers = ['q1', 'q2', 'q3'];
     const score = answers.reduce((total, name) => {
       const selected = quiz.querySelector(`input[name="${name}"]:checked`);
@@ -67,5 +69,10 @@ if (quiz && quizButton && quizResult) {
       quizResult.textContent = `${score}/3 – Wiederholt kurz die Karten und Diagramme, bevor ihr bewertet.`;
       quizResult.classList.add('is-low');
     }
+  };
+
+  quiz.addEventListener('submit', (event) => {
+    event.preventDefault();
+    evaluateQuiz();
   });
 }
