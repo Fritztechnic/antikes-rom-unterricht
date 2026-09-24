@@ -73,7 +73,7 @@ if (quiz && quizButton && quizResult) {
       quizResult.textContent = `${score}/3 – Gut. Prüft noch einmal, wie Lage und Infrastruktur zusammenhängen.`;
       quizResult.classList.add('is-mid');
     } else {
-      quizResult.textContent = `${score}/3 – Wiederholt kurz die Karten und Diagramme, bevor ihr bewertet.`;
+      quizResult.textContent = `${score}/3 – Wiederholt kurz Lage, Infrastruktur und Wohnen, bevor ihr bewertet.`;
       quizResult.classList.add('is-low');
     }
   };
